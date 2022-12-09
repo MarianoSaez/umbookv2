@@ -1,0 +1,53 @@
+{
+  "applications": ["umbookv2"],
+  "changelogDate": "20221209013519",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "usuario",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Usuario",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "ownerSide": true,
+      "relationshipName": "core",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "friendAssoc",
+      "ownerSide": true,
+      "relationshipName": "amigos",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "album",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "album",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "comentario",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "comentario",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "notification",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "notification",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "friendAssoc",
+      "otherEntityRelationshipName": "usuario",
+      "ownerSide": false,
+      "relationshipName": "friendAssoc",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

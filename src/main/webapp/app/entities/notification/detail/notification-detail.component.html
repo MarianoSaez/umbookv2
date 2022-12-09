@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="notification">
+      <h2 data-cy="notificationDetailsHeading"><span jhiTranslate="umbookv2App.notification.detail.title">Notification</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ notification.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="umbookv2App.notification.contendio">Contendio</span></dt>
+        <dd>
+          <span>{{ notification.contendio }}</span>
+        </dd>
+        <dt><span jhiTranslate="umbookv2App.notification.emisor">Emisor</span></dt>
+        <dd>
+          <div *ngIf="notification.emisor">
+            <a [routerLink]="['/usuario', notification.emisor.id, 'view']">{{ notification.emisor.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="umbookv2App.notification.user">User</span></dt>
+        <dd>
+          <div *ngIf="notification.user">
+            <a [routerLink]="['/usuario', notification.user.id, 'view']">{{ notification.user.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+      </button>
+
+      <button type="button" [routerLink]="['/notification', notification.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

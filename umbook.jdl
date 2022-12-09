@@ -1,0 +1,71 @@
+
+application {
+  config {
+    baseName umbookv2
+    applicationType monolith
+    packageName edu.um.isa.umbookv2
+    buildTool maven
+    devDatabaseType mariadb
+    prodDatabaseType mariadb
+    authenticationType jwt
+    testFrameworks [cypress]
+    clientTheme cyborg
+    languages [es,en]
+    nativeLanguage es
+    enableSwaggerCodegen true
+  }
+  entities *
+}
+
+
+// Entidades
+entity Usuario {
+	
+}
+
+entity Album {
+	name String
+}
+
+entity Foto {
+	caption String
+  fecha Instant
+}
+
+entity Comentario {
+	contenido String
+}
+
+entity Notification {
+	contendio String
+}
+
+entity FriendAssoc {
+
+}
+
+// Relaciones
+relationship OneToMany {
+  Usuario to Album{user}
+  Album to Foto{album}
+  Foto to Comentario{foto}
+	Usuario to Comentario{user}
+  Usuario to Notification{user}
+
+}
+
+relationship ManyToMany {
+  FriendAssoc to Usuario
+}
+
+relationship OneToOne {
+	Usuario{core} to User
+  Usuario{amigos} to FriendAssoc
+  Notification{emisor} to Usuario
+	//  Notification{propietario} to Usuario
+  //  Usuario to Notification{emisor}
+}
+
+service * with serviceClass
+
+ 

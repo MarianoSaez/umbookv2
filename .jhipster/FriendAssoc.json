@@ -1,0 +1,23 @@
+{
+  "applications": ["umbookv2"],
+  "changelogDate": "20221209014019",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "friend_assoc",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "FriendAssoc",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "usuario",
+      "otherEntityRelationshipName": "friendAssoc",
+      "ownerSide": true,
+      "relationshipName": "usuario",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

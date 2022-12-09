@@ -1,0 +1,27 @@
+{
+  "umbookv2App": {
+    "foto": {
+      "home": {
+        "title": "Fotos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Foto",
+        "createOrEditLabel": "Create or edit a Foto",
+        "notFound": "No Fotos found"
+      },
+      "created": "A new Foto is created with identifier {{ param }}",
+      "updated": "A Foto is updated with identifier {{ param }}",
+      "deleted": "A Foto is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Foto {{ id }}?"
+      },
+      "detail": {
+        "title": "Foto"
+      },
+      "id": "ID",
+      "caption": "Caption",
+      "fecha": "Fecha",
+      "comentario": "Comentario",
+      "album": "Album"
+    }
+  }
+}

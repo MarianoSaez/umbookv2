@@ -1,0 +1,24 @@
+{
+  "umbookv2App": {
+    "friendAssoc": {
+      "home": {
+        "title": "Friend Assocs",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Friend Assoc",
+        "createOrEditLabel": "Crear o editar Friend Assoc",
+        "notFound": "Ningún Friend Assocs encontrado"
+      },
+      "created": "Un nuevo Friend Assoc ha sido creado con el identificador {{ param }}",
+      "updated": "Un Friend Assoc ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Friend Assoc ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Friend Assoc {{ id }}?"
+      },
+      "detail": {
+        "title": "Friend Assoc"
+      },
+      "id": "ID",
+      "usuario": "Usuario"
+    }
+  }
+}

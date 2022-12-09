@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="friendAssoc">
+      <h2 data-cy="friendAssocDetailsHeading"><span jhiTranslate="umbookv2App.friendAssoc.detail.title">Friend Assoc</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ friendAssoc.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="umbookv2App.friendAssoc.usuario">Usuario</span></dt>
+        <dd>
+          <span *ngFor="let usuario of friendAssoc.usuarios; let last = last">
+            <a [routerLink]="['/usuario', usuario.id, 'view']">{{ usuario.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+      </button>
+
+      <button type="button" [routerLink]="['/friend-assoc', friendAssoc.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>
