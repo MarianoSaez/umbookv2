@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Usuario">
+    <test name="Test UMBook">
+        <!-- <groups>
+            <run>
+                <include name="Auto" />
+                <include name="Scooter"/>
+            </run>
+        </groups> -->
+        <classes>
+            <class name="edu.um.isa.umbookv2.service.SearchUserTest" />
+        </classes>
+    </test>
+</suite>

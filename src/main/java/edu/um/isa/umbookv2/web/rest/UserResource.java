@@ -93,6 +93,11 @@ public class UserResource {
         this.mailService = mailService;
     }
 
+    @GetMapping("/users/search/{query}")
+    public List<User> searchUsers(@PathVariable("query") String query) {
+        return userService.searchUser(query);
+    }
+
     /**
      * {@code POST  /admin/users}  : Creates a new user.
      * <p>

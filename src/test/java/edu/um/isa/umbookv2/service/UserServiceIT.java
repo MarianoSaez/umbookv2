@@ -76,6 +76,23 @@ class UserServiceIT {
 
     @Test
     @Transactional
+    void assertSearchUser() {
+        userRepository.saveAndFlush(user); // Limpiar del test anterior
+        String query = user.getLogin();
+        List<User> result = userService.searchUser(query);
+
+        assertThat(result).isNotEmpty(); // Deberia haber al menos un usuario
+
+        for (User u : result) {
+            String login = u.getLogin();
+            String firstName = u.getFirstName();
+            String lastName = u.getLastName();
+            assertThat(login == query | firstName == query | lastName == query).isTrue(); // Alguno de los tres campos debe coincidir
+        }
+    }
+
+    @Test
+    @Transactional
     void assertThatUserMustExistToResetPassword() {
         userRepository.saveAndFlush(user);
         Optional<User> maybeUser = userService.requestPasswordReset("invalid.login@localhost");
