@@ -39,7 +39,7 @@
     "predocker:others:up": "",
     "docker:others:up": "",
     "e2e": "npm run e2e:cypress:headed --",
-    "e2e:cypress": "cypress run --e2e --browser chrome --record ${CYPRESS_ENABLE_RECORD:-false}",
+    "e2e:cypress": "cypress run --e2e --browser firefox --record ${CYPRESS_ENABLE_RECORD:-false}",
     "e2e:cypress:audits": "cypress run --e2e --browser chrome --record ${CYPRESS_ENABLE_RECORD:-false} --config-file cypress-audits.config.js",
     "e2e:cypress:audits:headless": "npm run e2e:cypress -- --config-file cypress-audits.config.js",
     "e2e:cypress:headed": "npm run e2e:cypress -- --headed",
