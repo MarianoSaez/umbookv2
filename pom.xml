@@ -598,7 +598,15 @@
                             </platforms>
                         </from>
                         <to>
-                            <image>umbookv2:latest</image>
+                            <image>mmsaez/umbook:latest</image>
+                            <tags>
+                                <tag>${project.version}</tag>
+                                <tag>latest</tag>
+                            </tags>
+                            <auth>
+                                <username>${DOCKER_REGISTRY_USER}</username>
+                                <password>${DOCKER_REGISTRY_PWD}</password>
+                            </auth>
                         </to>
                         <container>
                             <entrypoint>
